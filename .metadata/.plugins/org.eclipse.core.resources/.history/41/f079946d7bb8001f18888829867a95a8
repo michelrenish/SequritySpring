@@ -1,0 +1,10 @@
+package com.jsp.Product.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.jsp.Product.entity.Products;
+
+public interface ProductRepo extends JpaRepository<Products,Integer> {
+
+	
+}

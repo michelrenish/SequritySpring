@@ -1,0 +1,40 @@
+2024-12-06T10:32:05.881+05:30  INFO 15248 --- [singupLogin] [main] c.j.singupLogin.SingupLoginApplication   : Starting SingupLoginApplication using Java 21.0.4 with PID 15248 (E:\Projects\singupLogin\target\classes started by SKIP in E:\Projects\singupLogin)
+2024-12-06T10:32:05.898+05:30  INFO 15248 --- [singupLogin] [main] c.j.singupLogin.SingupLoginApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-12-06T10:32:07.073+05:30  INFO 15248 --- [singupLogin] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-06T10:32:07.164+05:30  INFO 15248 --- [singupLogin] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 2 JPA repository interfaces.
+2024-12-06T10:32:08.166+05:30  INFO 15248 --- [singupLogin] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-06T10:32:08.188+05:30  INFO 15248 --- [singupLogin] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-06T10:32:08.188+05:30  INFO 15248 --- [singupLogin] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-06T10:32:08.304+05:30  INFO 15248 --- [singupLogin] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-06T10:32:08.304+05:30  INFO 15248 --- [singupLogin] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2339 ms
+2024-12-06T10:32:08.739+05:30  INFO 15248 --- [singupLogin] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-06T10:32:08.886+05:30  INFO 15248 --- [singupLogin] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-06T10:32:08.950+05:30  INFO 15248 --- [singupLogin] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-06T10:32:09.450+05:30  INFO 15248 --- [singupLogin] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-06T10:32:09.516+05:30  INFO 15248 --- [singupLogin] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-06T10:32:09.800+05:30  INFO 15248 --- [singupLogin] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d132bb6
+2024-12-06T10:32:09.803+05:30  INFO 15248 --- [singupLogin] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-06T10:32:09.876+05:30  WARN 15248 --- [singupLogin] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.27 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-12-06T10:32:09.913+05:30  INFO 15248 --- [singupLogin] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.27
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-06T10:32:11.060+05:30  INFO 15248 --- [singupLogin] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-06T10:32:11.133+05:30  INFO 15248 --- [singupLogin] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-06T10:32:11.588+05:30  INFO 15248 --- [singupLogin] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-06T10:32:11.849+05:30  WARN 15248 --- [singupLogin] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-06T10:32:12.667+05:30  INFO 15248 --- [singupLogin] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-06T10:32:12.681+05:30  INFO 15248 --- [singupLogin] [main] c.j.singupLogin.SingupLoginApplication   : Started SingupLoginApplication in 7.556 seconds (process running for 8.411)
+2024-12-06T10:32:55.339+05:30  INFO 15248 --- [singupLogin] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-06T10:32:55.339+05:30  INFO 15248 --- [singupLogin] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-06T10:32:55.342+05:30  INFO 15248 --- [singupLogin] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-12-06T10:32:55.705+05:30  INFO 15248 --- [singupLogin] [http-nio-8080-exec-2] c.j.singupLogin.sevicesimple.UserSerImp  : User Details are saved
+2024-12-06T10:33:56.046+05:30  INFO 15248 --- [singupLogin] [http-nio-8080-exec-3] c.j.singupLogin.sevicesimple.UserSerImp  : OTP Sent to your mail
+2024-12-06T10:34:21.072+05:30  INFO 15248 --- [singupLogin] [http-nio-8080-exec-5] c.j.s.sevicesimple.OtpSeviceimp          : User Details
+2024-12-06T10:34:35.611+05:30  INFO 15248 --- [singupLogin] [http-nio-8080-exec-4] c.j.s.sevicesimple.OtpSeviceimp          : User Details
+2024-12-06T10:35:47.190+05:30 ERROR 15248 --- [singupLogin] [http-nio-8080-exec-8] c.j.singupLogin.sevicesimple.UserSerImp  : Invalid User ID or Email
+2024-12-06T10:36:08.213+05:30 ERROR 15248 --- [singupLogin] [http-nio-8080-exec-9] c.j.singupLogin.sevicesimple.UserSerImp  : Invalid Password

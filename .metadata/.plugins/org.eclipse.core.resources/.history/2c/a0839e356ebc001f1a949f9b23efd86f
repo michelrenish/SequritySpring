@@ -1,0 +1,68 @@
+package com.employee.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import com.employee.entity.Employee;
+import com.employee.service.EmployeeService;
+
+@ExtendWith(MockitoExtension.class)
+class EmployeeControllerTest {
+	@Mock
+	EmployeeService employeeService;
+	
+	@InjectMocks
+	EmployeeController controller;
+	
+	static Employee e;
+	
+	@BeforeAll
+	static void init() {
+		e = new Employee(123, "bcd",23400, "dev");
+	}
+
+	@Test
+	void testSaveEmployee() {
+		Mockito.when(employeeService.saveEmployee(any(Employee.class))).thenReturn(e);
+		ResponseEntity<Employee> res = controller.saveEmployee(e);
+		Assertions.assertEquals(HttpStatus.CREATED, res.getStatusCode());
+		Assertions.assertEquals(e.getId(),res.getBody().getId());
+	}
+
+	@Test
+	void testGetAllEmployee() {
+		Mockito.when(employeeService.getAllEmployee().thenReturn(e);
+	}
+
+	@Test
+	void testEmpBySort() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testFindById() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testDeleteById() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testFindByDesgn() {
+		fail("Not yet implemented");
+	}
+
+}

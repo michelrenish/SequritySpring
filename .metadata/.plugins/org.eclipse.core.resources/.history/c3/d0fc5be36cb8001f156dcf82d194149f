@@ -1,0 +1,18 @@
+package com.jsp.Product.exeption;
+
+public class ProductNotFoundExeption extends RuntimeException {
+	
+	private String Message="Product Not Found";
+	
+	@Override
+	public String getMessage() {
+		return super.getMessage();
+	}
+	public ProductNotFoundExeption() {
+	}
+	public ProductNotFoundExeption(String message) {
+		super();
+		Message = message;
+	}
+	
+}

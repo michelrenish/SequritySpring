@@ -1,0 +1,123 @@
+package com.employee.service.impl;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.hibernate.internal.build.AllowSysOut;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Sort;
+
+import com.employee.entity.Employee;
+import com.employee.exception.EmployeeAlreadyExistException;
+import com.employee.exception.EmployeeNotFoundException;
+import com.employee.repo.EmployeeRepo;
+
+@ExtendWith(MockitoExtension.class)
+class EmployeeServiceImplTest extends EmployeeServiceImpl {
+
+	@Mock
+	EmployeeRepo repo;
+
+	@InjectMocks
+	EmployeeServiceImpl employeeServiceImpl;
+
+	static ArrayList<Employee> l1;
+	static Employee e1;
+	static Employee e2;
+	static Employee e3;
+	static Employee e4;
+	static Employee e5;
+
+	@BeforeAll
+	static void init() {
+		l1 = new ArrayList<Employee>();
+	}
+
+	@BeforeEach
+	void initEach() {
+		e1 = new Employee(1, "abc", 50000, "dev");
+		e2 = new Employee(2, "def", 58000, "dev");
+		e3 = new Employee(3, "ghi", 60000, "test");
+		e4 = new Employee(4, "jkl", 54000, "test");
+		e5 = new Employee(5, "mno", 55000, "admin");
+		l1.add(e1);
+		l1.add(e2);
+		l1.add(e3);
+		l1.add(e4);
+		l1.add(e5);
+	}
+
+	@Test
+	void testSaveEmployee() {
+		Mockito.when(repo.save(e1)).thenReturn(e1);
+		Employee temp = employeeServiceImpl.saveEmployee(e1);
+		Assertions.assertEquals(e1.getId(), temp.getId());
+	}
+
+	@Test // for exeption
+	void testSaveEmployee2() {
+		Mockito.when(repo.save(e1)).thenThrow(EmployeeAlreadyExistException.class);
+		Assertions.assertThrows(EmployeeAlreadyExistException.class, () -> {
+			employeeServiceImpl.saveEmployee(e1);
+		});
+		verify(repo, times(1)).save(e1);
+	}
+
+	@Test
+	void testGetAllEmployee() {
+		Mockito.when(repo.findAll()).thenReturn(l1);
+		List<Employee> temp = employeeServiceImpl.getAllEmployee();
+		Assertions.assertEquals(l1.get(0).getId(), temp.get(0).getId());
+	}
+	@Test
+	void testGetEmployeeBySorting() {
+	Mockito.when(repo.findAll(Sort.by("salary").descending().and(Sort.by("name")))).thenReturn(l1);;
+	List<Employee> temp = employeeServiceImpl.getEmployeeBySorting();
+	System.out.println(temp);
+	Assertions.assertEquals(l1.get(0).getId(), temp.get(0).getId());
+	}
+
+//	@Test
+//	void testDeleteById() {
+//		fail("Not yet implemented");
+//	}
+	@Test
+	void testFindById() {
+		Mockito.when(repo.findById(1)).thenReturn(Optional.of(e1));
+		Employee temp = employeeServiceImpl.findById(1);
+		Assertions.assertEquals(e1.getId(), temp.getId());
+	}
+	@Test
+	void testFindById1() {
+		Mockito.when(repo.findById(2)).thenThrow(EmployeeNotFoundException.class);
+		Assertions.assertThrows(EmployeeNotFoundException.class,()->{
+			employeeServiceImpl.findById(2);
+		});
+		verify(repo,times(1)).findById(2);
+	}
+
+	@Test
+	void testFindByDesgn() {
+		List<Employee> list = l1.stream().filter(ele -> ele.getDesignation().equals("admin"))
+				.collect(Collectors.toList());
+		Mockito.when(repo.findByDesignation("dev")).thenReturn(list);
+		List<Employee> temp = employeeServiceImpl.findByDesgn("dev");
+		Assertions.assertEquals(list.size(), temp.size());
+		
+	}
+
+}

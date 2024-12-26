@@ -1,0 +1,5 @@
+package com.jsp.Product.exeption;
+
+public class GlobalExeption {
+
+}

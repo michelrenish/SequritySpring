@@ -1,0 +1,24 @@
+package com.jsp.Product.dao;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.jsp.Product.entity.Products;
+import com.jsp.Product.exeption.ProductNotFoundExeption;
+import com.jsp.Product.repository.ProductRepo;
+
+@Repository
+public class ProductDao {
+	@Autowired
+	ProductRepo productRepo;
+	
+	public Products saveProducts(Products products) {
+		return productRepo.save(products);
+	}
+	public Optional<Products> findByProductid(int id) {
+		return productRepo.findById(id);
+//				.orElseThrow(()-> new ProductNotFoundExeption("ProductNotFoundExeption"));
+	}
+	
+}

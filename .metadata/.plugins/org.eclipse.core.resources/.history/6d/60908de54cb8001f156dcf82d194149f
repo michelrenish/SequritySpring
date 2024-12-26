@@ -1,0 +1,19 @@
+package com.jsp.Product.entity;
+
+import java.util.Date;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Data;
+
+@Entity
+@Data
+public class Products {
+	@Id
+	private int productid;
+	private String productname;
+	private String category;
+	private double price;
+	private Date mfgdate;
+	private Date expdate;
+}

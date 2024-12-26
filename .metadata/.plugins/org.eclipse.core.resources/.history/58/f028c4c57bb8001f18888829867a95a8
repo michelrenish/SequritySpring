@@ -1,0 +1,9 @@
+package com.jsp.Product.service;
+
+import com.jsp.Product.entity.Products;
+
+public interface ProductService {
+	
+	public Products saveProducts(Products products);
+	public Products findByProductid(int id);
+}

@@ -1,0 +1,16 @@
+package com.jsp.Product.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.jsp.Product.entity.Products;
+import com.jsp.Product.repository.ProductRepo;
+
+public class ProductDao {
+	@Autowired
+	ProductRepo productRepo;
+	
+	public Products saveProducts(Products products) {
+		return productRepo.save(products);
+	}
+	
+}

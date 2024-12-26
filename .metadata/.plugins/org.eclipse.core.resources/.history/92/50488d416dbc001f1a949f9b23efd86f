@@ -1,0 +1,46 @@
+package com.employee.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.employee.service.EmployeeService;
+
+@ExtendWith(MockitoExtension.class)
+class EmployeeControllerTest {
+	
+	EmployeeService employeeService;
+
+	@Test
+	void testSaveEmployee() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetAllEmployee() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testEmpBySort() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testFindById() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testDeleteById() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testFindByDesgn() {
+		fail("Not yet implemented");
+	}
+
+}
